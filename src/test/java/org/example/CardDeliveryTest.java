@@ -52,13 +52,12 @@ public class CardDeliveryTest {
         form.$("[data-test-id=date] input").sendKeys(Keys.CONTROL + "A");
         form.$("[data-test-id=date] input").sendKeys(Keys.BACK_SPACE);
         form.$("[data-test-id=date] input").setValue(secondMeetingDate);
-        $$(".calendar__day").find(exactText(DataGenerator.generateDate(daysToAddForSecondMeeting, "d"))).click();
         form.$(".button").click();
         $(withText("Необходимо подтверждение")).shouldBe(visible, Duration.ofSeconds(15));
         $$(".notification__content").get(1)
                 .shouldHave(Condition.text("У вас уже запланирована встреча на другую дату. Перепланировать?"), Duration.ofSeconds(25))
                 .shouldBe(Condition.visible);
-        $(".button").click();
+        $(".button__text").click();
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
         $("[data-test-id='success-notification'] .notification__content")
                 .shouldHave(Condition.text("Встреча успешно запланирована на " + secondMeetingDate), Duration.ofSeconds(25))
