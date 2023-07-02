@@ -7,7 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.Keys;
-import org.example.DataGenerator;
+
 
 import java.time.Duration;
 import java.util.Locale;
