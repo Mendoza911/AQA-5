@@ -15,7 +15,6 @@ public class DataGenerator {
     public static String generateDate(int shift, String pattern) {
         LocalDate now = LocalDate.now();
         String date = now.plusDays(shift).format(DateTimeFormatter.ofPattern(pattern));
-
         return date;
     }
 
